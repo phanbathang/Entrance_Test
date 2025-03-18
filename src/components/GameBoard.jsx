@@ -14,7 +14,7 @@ const GameBoard = ({ caseLogic }) => {
   const [positions, setPositions] = useState({});
   const [tempPoints, setTempPoints] = useState(points);
   const [currentAutoIndex, setCurrentAutoIndex] = useState(0); // Lưu index auto play
-
+//// test
   useEffect(() => {
     const newSequence = [...Array(points).keys()].map((i) => i + 1);
     setSequence(newSequence);
