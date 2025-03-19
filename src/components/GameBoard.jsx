@@ -13,8 +13,8 @@ const GameBoard = ({ caseLogic }) => {
   const [hiddenPoints, setHiddenPoints] = useState(new Set());
   const [positions, setPositions] = useState({});
   const [tempPoints, setTempPoints] = useState(points);
-  const [currentAutoIndex, setCurrentAutoIndex] = useState(0); // Lưu index auto play
-//// test
+  const [currentAutoIndex, setCurrentAutoIndex] = useState(0); 
+
   useEffect(() => {
     const newSequence = [...Array(points).keys()].map((i) => i + 1);
     setSequence(newSequence);
@@ -74,7 +74,7 @@ const GameBoard = ({ caseLogic }) => {
     setTimerMap({});
     setHiddenPoints(new Set());
     setSequence([...Array(points).keys()].map((i) => i + 1));
-    setCurrentAutoIndex(0); // Reset auto play
+    setCurrentAutoIndex(0);
   };
 
   const handlePointsChange = (e) => {

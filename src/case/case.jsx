@@ -5,7 +5,6 @@ const caseLogic = {
   handleUserClick: (num, { sequence, userInput, setUserInput, setMessage, setPlaying, setTimerMap, setHiddenPoints }) => {
     const newInput = [...userInput, num];
 
-    // Kiểm tra nếu chọn sai thứ tự
     if (newInput[newInput.length - 1] !== sequence[newInput.length - 1]) {
       setMessage("Game Over");
       setPlaying(false);
@@ -14,16 +13,14 @@ const caseLogic = {
 
     setUserInput(newInput);
 
-    // Bắt đầu đếm ngược 3 giây trước khi ẩn điểm
     setTimerMap((prev) => ({
       ...prev,
-      [num]: 3, // Bắt đầu từ 3 giây
+      [num]: 3,
     }));
 
-    // Giảm thời gian mỗi giây
     const countdown = setInterval(() => {
       setTimerMap((prev) => {
-        if (!prev[num]) return prev; // Ngăn lỗi undefined -> NaN
+        if (!prev[num]) return prev;
         if (prev[num] === 1) {
           clearInterval(countdown);
           setHiddenPoints((prevHidden) => {
